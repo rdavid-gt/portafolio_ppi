@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones</title>
+    <script type="text/javascript" src="equivalencia.js"></script>
+    <link rel="stylesheet" href="../estilog.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../index.html">Inicio</a>
+        <a href="../about.html">Acerca de mi</a>
+        <a href="../examen_MT/contador.html">Temporizador</a>
+        <a href="../practica_2.html">Práctica 2</a>
+        <a href="../Practica_3/index.html">Práctica 3</a>
+        <a href="index.html">Práctica 4</a>
+        <a href="../Practica_5/tabla.html">Práctica 5</a>
+        <a href="../Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Calificaciones</h1>
+        <h3>Calificación numérica</h3>
+        <form action="">
+            <label for="calificacion">Introduzca la calificación numérica</label><br>
+            <input type="number" name="calificacion" id="grade"><br><br>
+            <button type="button" onclick="equivalencia()">Enviar</button>
+        </form>
+        <h3>Equivalencia</h3>
+        <p id="answer"></p>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+
+</body>
+</html>

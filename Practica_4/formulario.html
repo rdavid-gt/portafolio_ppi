@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script type="text/javascript" src="formulario.js"></script>
+    <link rel="stylesheet" href="../estilog.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../index.html">Inicio</a>
+        <a href="../about.html">Acerca de mi</a>
+        <a href="../examen_MT/contador.html">Temporizador</a>
+        <a href="../practica_2.html">Práctica 2</a>
+        <a href="../Practica_3/index.html">Práctica 3</a>
+        <a href="index.html">Práctica 4</a>
+        <a href="../Practica_5/tabla.html">Práctica 5</a>
+        <a href="../Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Formulario</h1>
+        <form action="">
+            <label for="nombre">Introduzca su nombre</label><br>
+            <input type="text" name="nombre" id="name"><br>
+            <label for="correo">Introduzca su correo</label><br>
+            <input type="email" name="correo" id="mail"><br>
+            <label for="edad">Introduzca su edad</label><br>
+            <input type="number" name="edad" id="age" min="0"><br>
+            <label for="genero">Seleccione su género</label><br>
+            <input type="radio" name="genero" id="Masculino" value="Masculino">Masculino
+            <input type="radio" name="genero" id="Femenino" value="Femenino">Femenino
+            <input type="radio" name="genero" id="Otro" value="Otro">Otro<br>
+            <label for="fecha">Introduzca su fecha de nacimiento</label><br>
+            <input type="date" name="fecha" id="birthdate"><br>
+            <label for="colorfav">Introduzca su color favorito</label><br>
+            <input type="color" name="colorfav" id="colour"><br>
+            <button type="button" onclick="datos()">Enviar</button>
+        </form>
+        <h3>Resultado</h3>
+        <p id="answer"></p>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 6</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="../estilog.css">
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script>
+        var x = document.getElementById("demo");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            }else{
+                x.innerHTML = "Su navegador no soporta geolocalización.";
+            }
+        }
+
+        function showPosition(position) {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            document.getElementById("coords").innerHTML = "Latitud: " + lat + "<br>Longitud: " + lon
+            latlon = new google.maps.LatLng(lat, lon)
+            mapholder = document.getElementById('mapholder')
+            mapholder.style.height = '300px';
+            mapholder.style.width = '500px';
+
+            var myOptions = {
+                center:latlon,zoom:14,
+                mapTypeId:google.maps.MapTypeId.ROADMAP,
+                mapTypeControl:false,
+                navigationControlOptions: {
+                    style:google.maps.NavigationControlStyle.SMALL
+                }
+            }
+
+            var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+            var marker = new google.maps.Marker({
+                position:latlon,
+                map:map,
+                title:"¡Aquí esta!"
+            });
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "El usuario declinó la petición de Geolocalización."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "La información de geolocalización no está disponible."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "La petición del usuario rebasó el tiempo de espera."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "Error desconocido."
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../index.html">Inicio</a>
+        <a href="../about.html">Acerca de mi</a>
+        <a href="../examen_MT/contador.html">Temporizador</a>
+        <a href="../practica_2.html">Práctica 2</a>
+        <a href="../Practica_3/index.html">Práctica 3</a>
+        <a href="../Practica_4/">Práctica 4</a>
+        <a href="../Practica_5/tabla.html">Práctica 5</a>
+        <a href="multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Práctica 6</h1>
+        <div id="contenido">
+            <h2>Video</h2>
+            <video src="andor.mp4" type="video/mp4" controls>
+                Su navegador no soporta el elemento de video.
+            </video><br>
+            <h2>Audio</h2>
+            <audio src="pikachu.mp4" controls>
+                Su navegador no soporta el elemento de audio.
+            </audio><br>
+            <h2>Video de YouTube</h2>
+            <iframe width="560" height="420" src="https://www.youtube.com/embed/z9Uz1icjwrM" frameborder="0" allowfullscreen></iframe><br>
+            <h2>Post de Twitter y "Timeline"</h2>
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">In <a href="https://twitter.com/hashtag/PokemonWindsWaves?src=hash&amp;ref_src=twsrc%5Etfw">#PokemonWindsWaves</a>, releasing exclusively on Nintendo Switch 2, you’ll travel across beautiful windswept islands and a vast ocean with glittering waves that ebb and flow. 🍃🌊 <br><br>You’ll also team up with Pokémon to overcome challenges and even the forces of nature! <a href="https://t.co/had2IoBtxc">pic.twitter.com/had2IoBtxc</a></p>&mdash; Pokémon (@Pokemon) <a href="https://twitter.com/Pokemon/status/2027394547756548460?ref_src=twsrc%5Etfw">February 27, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br>
+            <a class="twitter-timeline" href="https://twitter.com/NintendoAmerica?ref_src=twsrc%5Etfw">Tweets by NintendoAmerica</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br>
+            <h2>Timeline de Facebook</h2>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNintendoAmerica&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe><br>
+            <h2>Geolocalización</h2>
+            <p id="demo">Presione el botón para obtener su ubicación aproximada.</p>
+            <button onclick="getLocation()">Presionar</button>
+            <p id="coords"></p>
+            <div id="mapholder"></div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+
+</body>
+</html>

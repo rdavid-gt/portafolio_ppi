@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="estilog.css">
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Acerca de mi</a>
+        <a href="examen_MT/contador.html">Temporizador</a>
+        <a href="practica_2.html">Práctica 2</a>
+        <a href="Practica_3/index.html">Práctica 3</a>
+        <a href="Practica_4/">Práctica 4</a>
+        <a href="Practica_5/tabla.html">Práctica 5</a>
+        <a href="Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Portafolio de Programación para internet</h1>
+
+        <div class="contenedor-proyectos">
+            <a href="about.html" class="tarjeta">
+                <h3>Acerca de mí</h3>
+                <p>Conoce más sobre mi trayectoria y habilidades 👤</p>
+            </a>
+
+            <a href="examen_MT/contador.html" class="tarjeta">
+                <h3>Examen MT</h3>
+                <p>Examen que consiste en realizar un temporizador entre una fecha dada y el día de hoy</p>
+            </a>
+
+            <a href="practica_2.html" class="tarjeta">
+                <h3>Práctica 2</h3>
+                <p>Uso de etiquetas básicas de HTML 🌐</p>
+            </a>
+
+            <a href="Practica_3/index.html" class="tarjeta">
+                <h3>Práctica 3</h3>
+                <p>Uso de tablas y centrado de imagenes y modificar su tamaño 🖼️</p>
+            </a>
+
+            <a href="Practica_4/index.html" class="tarjeta">
+                <h3>Práctica 4</h3>
+                <p>Uso de JavaScript a nivel básico ✖️➗➕➖</p>
+            </a>
+
+            <a href="Practica_5/tabla.html" class="tarjeta">
+                <h3>Práctica 5</h3>
+                <p>Uso de JavaScript para llenar una tabla mediante un formulario 📝𝄜</p>
+            </a>
+
+            <a href="Practica_6/multimedia.html" class="tarjeta">
+                <h3>Práctica 6</h3>
+                <p>Incrustar diferentes archivos multimedia 📼🎵📍🗺️</p>
+            </a>
+
+            <a href="" class="tarjeta">
+                <h3>Práctica 7</h3>
+                <p>Próximamente</p>
+            </a>
+
+            <a href="" class="tarjeta">
+                <h3>Práctica 8</h3>
+                <p>Próximamente</p>
+            </a>
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+</body>
+</html>

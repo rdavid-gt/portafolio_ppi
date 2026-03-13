@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta regresiva</title>
+    <link rel="stylesheet" href="../estilog.css">
+    <style>
+        body{
+            text-align: center;
+            padding-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            font-size: 50px;
+        }
+
+        p{
+            font-size: 100px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:teal;
+        }
+
+        label, button, input{
+            font-size: 25px;
+        }
+    </style>
+    <script src="cuenta.js"></script>
+</head>
+<body>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../index.html">Inicio</a>
+        <a href="../about.html">Acerca de mi</a>
+        <a href="contador.html">Temporizador</a>
+        <a href="../practica_2.html">Práctica 2</a>
+        <a href="../Practica_3/index.html">Práctica 3</a>
+        <a href="../Practica_4/">Práctica 4</a>
+        <a href="../Practica_5/tabla.html">Práctica 5</a>
+        <a href="../Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Cuenta regresiva</h1>
+        <form action="">
+            <label for="fin">Ingrese la fecha y hora que se comparará con el día de hoy</label><br><br>
+            <input type="datetime-local" name="fin" id="end"><br><br>
+        </form>
+        <button id="boton" onclick="inicio()" disabled>Iniciar</button><br>
+        <p id="cuenta"></p><br>
+    </div>
+    <script>
+        document.getElementById("end").addEventListener("input", function() {
+            document.getElementById("boton").disabled = !document.getElementById("end").value;
+        })
+    </script>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+</body>
+</html>

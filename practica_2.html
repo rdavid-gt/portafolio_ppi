@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2. HTML</title>
+    <link rel="stylesheet" href="estilog.css">
+    <script src="menu.js" defer></script>
+</head>
+
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Acerca de mi</a>
+        <a href="examen_MT/contador.html">Temporizador</a>
+        <a href="practica_2.html">Práctica 2</a>
+        <a href="Practica_3/index.html">Práctica 3</a>
+        <a href="Practica_4/">Práctica 4</a>
+        <a href="Practica_5/tabla.html">Práctica 5</a>
+        <a href="Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Práctica 2. HTML</h1>
+
+        <!--Lista ordenada-->
+        <h2>Videojuegos Favoritos</h2>
+        <ol>
+            <li>Hollow Knight</li>
+            <li>Hollow Knight: Silksong</li>
+            <li>Super Mario Galaxy</li>
+            <li>Super Mario Galaxy 2</li>
+            <li>Mario Kart World</li>
+            <li>Dark Souls</li>
+            <li>Final Fantasy</li>
+            <li>Red Dead Redemption 2</li>
+            <li>Batman Arkham Knight</li>
+            <li>The Last of Us</li>
+        </ol>
+
+        <!--Lista no ordenada-->
+        <h2>Géneros</h2>
+        <ul>
+            <li>Acción</li>
+            <li>Aventura</li>
+            <li>Puzzles</li>
+            <li>Carreras</li>
+            <li>Indies</li>
+            <li>Shooters</li>
+            <li>Familiares</li>
+            <li>Fiesta</li>
+            <li>RPG</li>
+            <li>Plataformas</li>
+        </ul>
+
+        <!--Lista descriptiva-->
+        <h2>Consolas más vendidas de la historia (Agosto 2025)</h2>
+        <dl>
+            <dt>Playstation 2</dt>
+                <dd>+160M de copias</dd>
+            <dt>Nintendo DS</dt>
+                <dd>~154M de copias</dd>
+            <dt>Nintendo Switch</dt>
+                <dd>~154M de copias</dd>
+            <dt>Game Boy</dt>
+                <dd>~118M de copias</dd>
+            <dt>Playstation 4</dt>
+                <dd>~117M de copias</dd>
+        </dl>
+
+        <!--Formulario-->
+        <h2>Sus preferencias</h2>
+        <form name="input" action="html_form_action.asp" method="get">
+            <label for="videojuego">Videojuego favorito</label><br>
+            <input type="text" name="videojuego"><br>
+            <label for="plataforma">Plataforma favorita</label><br>
+            <input type="text" name="plataforma"><br>
+            <label for="compania">Compañía favorita</label><br>
+            <input type="text" name="compania"><br>
+
+            <label for="pwd">Password:</label><br>
+            <input type="password" name="pwd" placeholder="Contraseña"><br>
+
+            <label for="horas">Horas jugadas a la semana:</label><br>
+            <input type="number" name="horas" min="0" max="168" step="2" value="0"><br>
+
+            <label for="fecha">Fecha en que comenzó a jugar:</label>
+            <input type="date" name="fecha"><br>
+
+            <h3>Plataformas que posees</h3>
+            <input type="checkbox" name="plataformas">
+            <label for="plataformas">Nintendo Switch</label>
+            <input type="checkbox" name="plataformas">
+            <label for="plataformas">Xbox Series X|S</label>
+            <input type="checkbox" name="plataformas">
+            <label for="plataformas">Playstation 5</label>
+            <input type="checkbox" name="plataformas">
+            <label for="plataformas">PC</label><br>
+
+
+            <h2>Otros</h2>
+            <h4>Grado maximo de estudios</h4>
+            <input type="radio" name="estudios">
+            <label for="estudios">Bachillerato</label>
+            <input type="radio" name="estudios">
+            <label for="estudios">Licenciatura</label>
+            <input type="radio" name="estudios">
+            <label for="estudios">Maestría</label>
+            <input type="radio" name="estudios">
+            <label for="estudios">Doctorado</label><br><br>
+
+            <label for="mail">Correo electrónico:</label><br>
+            <input type="email" name="mail"><br><br>
+
+            <label for="archivo">CV</label><br>
+            <input type="file" name="archivo"><br><br>
+
+            <label for="colorselect">Color favorito:</label><br>
+            <input type="color" name="colorselect"><br><br>
+            
+            <label for="volumen">Volumen:</label><br>
+            <input type="range" name="volumen" min="0" max="100" value="50"><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+</body>
+</html>

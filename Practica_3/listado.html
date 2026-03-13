@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Alumnos</title>
+    <link rel="stylesheet" type="text/css" href="../estilog.css">
+    <style>
+        table{
+            text-align: center;
+            border: 3px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th,td{
+            border: 3px solid black;
+        }
+        th{
+            background-color: #A53860;
+            color: lightgreen;
+        }
+        .r1{
+            background-color: #c3bfc9;
+            font-size: medium;
+            font-style: italic;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .r2{
+            background-color: #affee5;
+            font-size: large;
+            padding-bottom: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .r3{
+            background-color: #b7728b;
+            font-size: small;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../index.html">Inicio</a>
+        <a href="../about.html">Acerca de mi</a>
+        <a href="../examen_MT/contador.html">Temporizador</a>
+        <a href="../practica_2.html">Práctica 2</a>
+        <a href="index.html">Práctica 3</a>
+        <a href="../Practica_4/">Práctica 4</a>
+        <a href="../Practica_5/tabla.html">Práctica 5</a>
+        <a href="../Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Listado de Alumnos</h1>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>ID</th>
+                <th>Carrera</th>
+                <th>Semestre</th>
+            </tr>
+            <tr class="r2">
+                <td>David García</td>
+                <td>00123456</td>
+                <td>Ing en Sistemas y TI</td>
+                <td>5to</td>
+            </tr>
+            <tr class="r3">
+                <td>Ricardo Trabanco</td>
+                <td>00891234</td>
+                <td>Actuaría</td>
+                <td>4to</td>
+            </tr>
+            <tr class="r1">
+                <td>Zuriel Tovar</td>
+                <td>00678912</td>
+                <td>Ing en Robótica</td>
+                <td>8vo</td>
+            </tr>
+            <tr class="r2">
+                <td>Francisco Mendoza</td>
+                <td>00456789</td>
+                <td>Ing en Nanotecnología</td>
+                <td>9no</td>
+            </tr>
+            <tr class="r3">
+                <td>Naomi Medina</td>
+                <td>00437825</td>
+                <td>Ing en Biomédica</td>
+                <td>6to</td>
+            </tr>
+            <tr class="r1">
+                <td>Itzel Mendoza</td>
+                <td>00438713</td>
+                <td>Ing en Mecatrónica</td>
+                <td>2do</td>
+            </tr>
+            <tr class="r2">
+                <td>Constanza Cardoso</td>
+                <td>00932781</td>
+                <td>Ing Industrial</td>
+                <td>3ro</td>
+            </tr>
+            <tr class="r3">
+                <td>Frida Salas</td>
+                <td>00348929</td>
+                <td>Negocios Internacionales</td>
+                <td>1ro</td>
+            </tr>
+            <tr class="r1">
+                <td>Zuzet Silva</td>
+                <td>00913482</td>
+                <td>Relaciones Internacionales</td>
+                <td>7mo</td>
+            </tr>
+            <tr class="r2">
+                <td>Diego Nieto</td>
+                <td>00431891</td>
+                <td>Matemáticas Aplicadas</td>
+                <td>8vo</td>
+            </tr>
+            <tr class="r3">
+                <td>Valeria Cardenas</td>
+                <td>00839122</td>
+                <td>Diseño Industrial</td>
+                <td>3vo</td>
+            </tr>
+        </table>
+        <h2>Regresar al índice</h2>
+        <a href="index.html">Ir al Índice de la Práctica 3</a><br>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+
+</body>
+</html>

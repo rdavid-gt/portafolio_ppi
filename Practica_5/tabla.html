@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 5</title>
+    <script src="llenar.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="../estilog.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../index.html">Inicio</a>
+        <a href="../about.html">Acerca de mi</a>
+        <a href="../examen_MT/contador.html">Temporizador</a>
+        <a href="../practica_2.html">Práctica 2</a>
+        <a href="../Practica_3/index.html">Práctica 3</a>
+        <a href="../Practica_4/">Práctica 4</a>
+        <a href="tabla.html">Práctica 5</a>
+        <a href="../Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Práctica 5</h1>
+        <h2>Formulario</h2>
+        <form action="">
+            <label for="name">Introduzca el nombre</label><br>
+            <input type="text" name="nombre" id="name"><br><br>
+
+            <label for="mail">Introduzca el correo</label><br>
+            <input type="email" name="correo" id="mail"><br><br>
+
+            <label for="consola">Consolas</label><br>
+            <input type="checkbox" name="consola" id="xbox" value="Xbox">
+            <label for="consola">Xbox</label>
+            <input type="checkbox" name="consola" id="playstation" value="Playstation">
+            <label for="consola">Playstation</label>
+            <input type="checkbox" name="consola" id="nintendo" value="Nintendo">
+            <label for="consola">Nintendo</label><br><br>
+
+            <label for="grado">Introduzca el mayor grado de estudios</label><br>
+            <input type="radio" name="grado" id="licenciatura" value="licenciatura">
+            <label for="grado">Licenciatura</label>
+            <input type="radio" name="grado" id="maestria" value="maestria">
+            <label for="grado">Maestría</label>
+            <input type="radio" name="grado" id="doctorado" value="doctorado">
+            <label for="grado">Doctorado</label><br><br>
+            
+            <label for="cita">Introduzca la fecha de la cita</label><br>
+            <input type="datetime-local" name="cita" id="fecha"><br><br>
+
+            <label for="colorselect">Introduzca el color</label><br>
+            <input type="color" name="colorselect" id="colour"><br><br>
+
+            <label for="volumen">Introduzca el volumen</label><br>
+            <input type="range" name="volumen" id="volume" min="0" max="100">
+        </form>
+        <button onclick="evaluar()">Enviar</button>
+        <p id="warning"></p>
+        <table id="tabla"></table>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+
+
+</body>
+</html>

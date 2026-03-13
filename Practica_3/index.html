@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice</title>
+    <link rel="stylesheet" type="text/css" href="../estilog.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../index.html">Inicio</a>
+        <a href="../about.html">Acerca de mi</a>
+        <a href="../examen_MT/contador.html">Temporizador</a>
+        <a href="../practica_2.html">Práctica 2</a>
+        <a href="index.html">Práctica 3</a>
+        <a href="../Practica_4/">Práctica 4</a>
+        <a href="../Practica_5/tabla.html">Práctica 5</a>
+        <a href="../Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Práctica 3: Índice</h1>
+        <div class="contenedor-proyectos">
+            <a href="listado.html" class="tarjeta">
+                <h3>Lista de alumnos</h3>
+                <p>Ir a la página de listado de alumnos</p>
+            </a>
+            
+            <a href="funcion.html" class="tarjeta">
+                <h3>Tabla</h3>
+                <p>Ir a la página de una tabla</p>
+            </a>
+
+            <a href="imagenes.html" class="tarjeta">
+                <h3>Imágenes</h3>
+                <p>Ir a la página de imágenes</p>
+            </a>
+
+            <a href="http://www.google.com" class="tarjeta">
+                <h3>Google</h3>
+                <p>Ir a Google</p>
+            </a>
+            
+            <a href="https://www.nintendo.com" class="tarjeta">
+                <h3>Nintendo</h3>
+                <p>Ir a la página oficial de Nintendo</p>
+            </a>
+
+            <a href="https://www.youtube.com" class="tarjeta">
+                <h3>YouTube</h3>
+                <p>Ir a Youtube</p>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+
+</body>
+</html>

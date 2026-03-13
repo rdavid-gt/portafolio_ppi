@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes</title>
+    <link rel="stylesheet" type="text/css" href="../estilog.css">
+    <link rel="stylesheet" type="text/css" href="tabla2.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../index.html">Inicio</a>
+        <a href="../about.html">Acerca de mi</a>
+        <a href="../examen_MT/contador.html">Temporizador</a>
+        <a href="../practica_2.html">Práctica 2</a>
+        <a href="index.html">Práctica 3</a>
+        <a href="../Practica_4/">Práctica 4</a>
+        <a href="../Practica_5/tabla.html">Práctica 5</a>
+        <a href="../Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Imágenes</h1>
+        <div class="centrar">
+            <img src="hk.jpg" alt="Hollow Knight" height="200">
+            <img src="hks.jpg" alt="Hollow Knight: Silksong" height="250">
+            <img src="spm.jpg" alt="Super Mario Galaxy" height="150">
+        </div>
+        <h2>Regresar al índice</h2>
+        <a href="index.html">Ir al Índice de la Práctica 3</a><br>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+</body>
+</html>

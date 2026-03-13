@@ -1,0 +1,40 @@
+
+
+table{
+    width: 100%;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+
+td, tr, th{
+    text-align: center;
+    border-right: 1px solid rgb(74, 74, 74);
+}
+
+th {
+    color: white;
+}
+
+#fields{
+    background-color: #A53860;
+}
+
+#fields:hover{
+    background-color: #7b2645;
+}
+
+.renglon1:hover{
+    background-color: #9a89b9;
+}
+
+.renglon1{
+    background-color: #ADA8B6;
+}
+
+.renglon2:hover{
+    background-color: #61C9A8;
+}
+
+.renglon2{
+    background-color: #8bc8b4;
+}

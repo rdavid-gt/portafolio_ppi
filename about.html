@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="estilog.css">
+    <style>
+        .presentacion-portafolio{
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Acerca de mi</a>
+        <a href="examen_MT/contador.html">Temporizador</a>
+        <a href="practica_2.html">Práctica 2</a>
+        <a href="Practica_3/index.html">Práctica 3</a>
+        <a href="Practica_4/">Práctica 4</a>
+        <a href="Practica_5/tabla.html">Práctica 5</a>
+        <a href="Practica_6/multimedia.html">Práctica 6</a>
+    </div>
+
+    <div class="presentacion-portafolio">
+        <h1>Acerca de mi</h1>
+        <p>Estudiante de Ingeniería en Sistemas y TI en la Universidad Anáhuac</p>
+        <p>Nacionalidad: mexicana</p>
+        <h2>Conocimientos y habilidades</h2>
+        <p>Bash, PSql</p>
+        <p>Automatización mediante Python</p>
+        <p>Técnicas de troubleshooting y debugging</p>
+        <p>Manejo de VCS como Git y Github</p>
+        <p>Manejo de archivos mediante Python y C</p>
+        <p>Programación Orientada a Objetos especialmente con Python y Java</p>
+        <p>NoSql mediante MongoDB</p>
+        <p>Inglés Avanzado y Francés Básico</p>
+        <p>Aprendizaje rápido</p>
+        <p>Pensamiento lógico matemático</p>
+        <p>Abstracción y entendimiento rápido de código</p>
+        <h2>Proyectos</h2>
+        <p>Graficadora sencilla desde cero mediante Pair Programming</p>
+        <p>(Burbuja, caja y bigotes, histograma y lineal)</p>
+        <p>Realización del juego de "Ahorcado", buscando el entendimiento</p>
+        <p>y aprendizaje de los componentes básicos de programación</p>
+        <p>Apoyo en la realización y refactorización de un Tic-tac-toe (Minimax)</p>
+        <h2>Reconocimiento</h2>
+        <p>Excelencia Académica Universidad Anáhuac México Norte</p>
+        <h2>Información de contacto</h2>
+        <a href="https://www.instagram.com/rdavid.gt?igsh=dDFycXd6ZXdnNGR0&utm_source=qr"><img src="instagram_icon.png" alt="" height="100"></a>
+        <a href="https://www.github.com/rdavid-gt"><img src="github-icon.png" alt="" height="100"></a><br>
+        <a href="mailto:davidogtrabanco@gmail.com">davidogtrabanco@gmail.com</a>
+    </div>
+    
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+                
+        document.addEventListener("click", function(event) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            if (sidebar &&
+                sidebar.classList.contains("active") &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)
+                ){
+                    sidebar.classList.remove("active");
+                }
+        });
+    </script>
+
+</body>
+</html>

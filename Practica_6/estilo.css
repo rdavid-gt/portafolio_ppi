@@ -1,0 +1,15 @@
+div#contenido{
+    text-align: center;
+    margin: 20px auto;
+}
+
+div#mapholder, div.twitter-tweet{
+    text-align: center;
+    margin: 20px auto;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 249, 211);
+    color:darkslategrey;
+}
